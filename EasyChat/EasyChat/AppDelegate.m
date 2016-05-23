@@ -26,7 +26,6 @@
     EMOptions *options = [EMOptions optionsWithAppkey:@"tk-person#tkeasychat"];
     options.apnsCertName = @"istore_dev";
     [[EMClient sharedClient] initializeSDKWithOptions:options];
-    [[EMClient sharedClient].options setIsAutoLogin:NO];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     // 是否自动登录

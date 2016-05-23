@@ -16,6 +16,7 @@
 		791E1F311CF1EDA1002F767D /* ECFromTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 791E1F2C1CF1EDA1002F767D /* ECFromTableViewCell.xib */; };
 		791E1F321CF1EDA1002F767D /* ECToTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 791E1F2E1CF1EDA1002F767D /* ECToTableViewCell.m */; };
 		791E1F331CF1EDA1002F767D /* ECToTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 791E1F2F1CF1EDA1002F767D /* ECToTableViewCell.xib */; };
+		791E1F371CF2A8B5002F767D /* ECSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791E1F351CF2A8B5002F767D /* ECSettingViewController.m */; };
 		793C28A31CF09F80004A1320 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 793C28A21CF09F80004A1320 /* main.m */; };
 		793C28A61CF09F80004A1320 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 793C28A51CF09F80004A1320 /* AppDelegate.m */; };
 		793C28AE1CF09F80004A1320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793C28AD1CF09F80004A1320 /* Assets.xcassets */; };
@@ -76,6 +77,8 @@
 		791E1F2D1CF1EDA1002F767D /* ECToTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECToTableViewCell.h; sourceTree = "<group>"; };
 		791E1F2E1CF1EDA1002F767D /* ECToTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECToTableViewCell.m; sourceTree = "<group>"; };
 		791E1F2F1CF1EDA1002F767D /* ECToTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ECToTableViewCell.xib; sourceTree = "<group>"; };
+		791E1F341CF2A8B5002F767D /* ECSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSettingViewController.h; sourceTree = "<group>"; };
+		791E1F351CF2A8B5002F767D /* ECSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSettingViewController.m; sourceTree = "<group>"; };
 		793C289E1CF09F80004A1320 /* EasyChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		793C28A21CF09F80004A1320 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		793C28A41CF09F80004A1320 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 				791E1F1A1CF13DBD002F767D /* ECConverseViewController.h */,
 				791E1F1B1CF13DBD002F767D /* ECConverseViewController.m */,
 				791E1F261CF14694002F767D /* ECConverseViewController.xib */,
+				791E1F341CF2A8B5002F767D /* ECSettingViewController.h */,
+				791E1F351CF2A8B5002F767D /* ECSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -640,6 +645,7 @@
 			files = (
 				793C290B1CF0A0F8004A1320 /* ECLoginViewController.m in Sources */,
 				793C28A61CF09F80004A1320 /* AppDelegate.m in Sources */,
+				791E1F371CF2A8B5002F767D /* ECSettingViewController.m in Sources */,
 				791E1F301CF1EDA1002F767D /* ECFromTableViewCell.m in Sources */,
 				793C28A31CF09F80004A1320 /* main.m in Sources */,
 				791E1F1C1CF13DBD002F767D /* ECConverseViewController.m in Sources */,

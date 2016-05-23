@@ -8,6 +8,7 @@
 //#import "ECNewsViewController.h"
 #import "ECConverseListViewController.h"
 #import "ECConverseViewController.h"
+#import "ECSettingViewController.h"
 #import "EMSDK.h"
 
 @interface ECConverseListViewController ()<EMContactManagerDelegate>
@@ -25,6 +26,14 @@
     
     [[EMClient sharedClient].contactManager addDelegate:self delegateQueue:nil];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(setBtnClick)];
+}
+
+// 进入set界面
+- (void)setBtnClick
+{
+    ECSettingViewController *setVC = [[ECSettingViewController alloc] init];
+    [self.navigationController pushViewController:setVC animated:YES];
 }
 
 - (NSMutableArray *)conversations

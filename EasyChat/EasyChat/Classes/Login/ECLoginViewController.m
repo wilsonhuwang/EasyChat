@@ -32,7 +32,7 @@
 - (IBAction)login:(id)sender {
     EMError *error = [[EMClient sharedClient] loginWithUsername:self.accountField.text password:self.pwdField.text];
     if (!error) {
-        [[EMClient sharedClient].options setIsAutoLogin:YES];
+//        [[EMClient sharedClient].options setIsAutoLogin:YES];
         [UIApplication sharedApplication].keyWindow.rootViewController = [[ECTabBarController alloc] init];
     } else {
         [SVProgressHUD showErrorWithStatus:@"登录失败"];

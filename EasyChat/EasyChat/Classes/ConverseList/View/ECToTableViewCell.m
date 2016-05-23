@@ -38,6 +38,15 @@
         }
             break;
         case EMMessageBodyTypeImage:
+        {
+            // 收到的文字消息
+            EMImageMessageBody *imageBody = (EMImageMessageBody *)msgBody;
+            UIImage *image = [UIImage imageWithContentsOfFile:imageBody.thumbnailLocalPath];
+            NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+            attachment.image = image;
+            attachment.bounds = CGRectMake(0, 0, image.size.width, image.size.height);
+            self.messageLabel.attributedText = [NSAttributedString attributedStringWithAttachment:attachment];
+        }
             break;
         case EMMessageBodyTypeLocation:
             break;

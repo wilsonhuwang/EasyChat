@@ -25,7 +25,7 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_send_nor" highlightedImage="chat_send_press_pic" translatesAutoresizingMaskIntoConstraints="NO" id="j1t-Iy-rGj" userLabel="bgImageView">
-                        <rect key="frame" x="64" y="5" width="230" height="102"/>
+                        <rect key="frame" x="64" y="0.0" width="230" height="112"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label3d3d3jiojojoijoijiojiojiojoijiojoijiojoijoijoijoijoijoijoijoijoijoijoijoijoijoihgyfytftyfytftyfytfytfytfyfy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="1KT-aW-zfg" userLabel="title">
                         <rect key="frame" x="79" y="15" width="200" height="82"/>
@@ -40,9 +40,9 @@
                     <constraint firstItem="iKV-fU-cgW" firstAttribute="leading" secondItem="1KT-aW-zfg" secondAttribute="trailing" constant="15" id="IqU-nk-q2v"/>
                     <constraint firstItem="1KT-aW-zfg" firstAttribute="leading" secondItem="j1t-Iy-rGj" secondAttribute="leading" constant="15" id="UC8-xD-nP0"/>
                     <constraint firstItem="iKV-fU-cgW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="b9T-jg-qh9"/>
-                    <constraint firstItem="1KT-aW-zfg" firstAttribute="top" secondItem="j1t-Iy-rGj" secondAttribute="top" constant="10" id="diZ-WC-hCA"/>
+                    <constraint firstItem="1KT-aW-zfg" firstAttribute="top" secondItem="j1t-Iy-rGj" secondAttribute="top" constant="15" id="diZ-WC-hCA"/>
                     <constraint firstItem="1KT-aW-zfg" firstAttribute="trailing" secondItem="j1t-Iy-rGj" secondAttribute="trailing" constant="-15" id="hQ1-DO-dr1"/>
-                    <constraint firstItem="1KT-aW-zfg" firstAttribute="bottom" secondItem="j1t-Iy-rGj" secondAttribute="bottom" constant="-10" id="p4F-sV-JAa"/>
+                    <constraint firstItem="1KT-aW-zfg" firstAttribute="bottom" secondItem="j1t-Iy-rGj" secondAttribute="bottom" constant="-15" id="p4F-sV-JAa"/>
                     <constraint firstItem="1KT-aW-zfg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="pYQ-wJ-zPw"/>
                 </constraints>
             </tableViewCellContentView>

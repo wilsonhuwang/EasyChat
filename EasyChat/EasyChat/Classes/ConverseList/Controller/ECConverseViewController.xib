@@ -29,6 +29,9 @@
                                 <constraint firstAttribute="height" constant="44" id="h6T-Ln-lbm"/>
                             </constraints>
                             <state key="normal" image="chatBar_more"/>
+                            <connections>
+                                <action selector="selectPicture:" destination="-1" eventType="touchUpInside" id="aJN-Yj-Gxs"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70F-s7-DS6">
                             <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -79,7 +82,7 @@
                         </mask>
                     </variation>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4zJ-fU-uW2" userLabel="contentView">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4zJ-fU-uW2" userLabel="contentView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                     <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>

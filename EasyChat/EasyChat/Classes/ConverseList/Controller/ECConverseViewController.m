@@ -10,7 +10,7 @@
 #import "EMSDK.h"
 #import "ECToTableViewCell.h"
 #import "ECFromTableViewCell.h"
-@interface ECConverseViewController ()<UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, EMChatManagerDelegate>
+@interface ECConverseViewController ()<UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, EMChatManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *news;
 // 输入View的底部约束
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *keyViewBottomConstraint;
@@ -133,7 +133,7 @@ static NSString *toId = @"toNew";
     NSString *from = [[EMClient sharedClient] currentUsername];
     
     //生成Message
-    EMMessage *message = [[EMMessage alloc] initWithConversationID:nil from:from to:self.buddy body:body ext:nil];
+    EMMessage *message = [[EMMessage alloc] initWithConversationID:self.currentConversation.conversationId from:from to:self.buddy body:body ext:nil];
     message.chatType = EMChatTypeChat;// 设置为单聊消息
     //message.chatType = EMChatTypeGroupChat;// 设置为群聊消息
     //message.chatType = EMChatTypeChatRoom;// 设置为聊天室消息
@@ -147,6 +147,54 @@ static NSString *toId = @"toNew";
     }];
 }
 
+// 选择图片
+- (IBAction)selectPicture:(id)sender
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    // 原图
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    // 缩略图
+    UIImage *thumbnailImage = [self getThumbnailImage:originalImage];
+    NSData *data = UIImagePNGRepresentation(originalImage);
+    NSData *thumbnailDatea = UIImagePNGRepresentation(thumbnailImage);
+    // 消息体
+    EMImageMessageBody *body = [[EMImageMessageBody alloc] initWithData:data thumbnailData:thumbnailDatea];
+    NSString *from = [[EMClient sharedClient] currentUsername];
+    
+    //生成Message
+    EMMessage *message = [[EMMessage alloc] initWithConversationID:self.currentConversation.conversationId from:from to:self.buddy body:body ext:nil];
+    message.chatType = EMChatTypeChat;
+    [self.news addObject:message];
+    [self.contentView reloadData];
+    
+    // 发送消息
+    [[EMClient sharedClient].chatManager asyncSendMessage:message progress:^(int progress) {
+        
+    } completion:^(EMMessage *message, EMError *error) {
+        
+    }];
+    
+    [self scrollToBottom];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+// 根据原图生产缩略图
+- (UIImage *)getThumbnailImage:(UIImage *)image
+{
+    UIGraphicsBeginImageContext(CGSizeMake(100 * image.size.width/image.size.height, 100));
+    [image drawInRect:CGRectMake(0, 0, 100 * image.size.width/image.size.height, 100)];
+    UIImage *thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return thumbnailImage;
+}
 
 - (void)textViewDidChange:(UITextView *)textView
 {
@@ -202,6 +250,7 @@ static NSString *toId = @"toNew";
     [self.contentView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionBottom animated:NO];
 }
 
+// 设置title
 - (void)setBuddy:(NSString *)buddy
 {
     _buddy = [buddy copy];
